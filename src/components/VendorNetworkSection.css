@@ -1,0 +1,47 @@
+.vendor-section {
+  padding: var(--section-padding);
+  background-color: var(--bg-secondary);
+}
+
+.vendor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.vendor-card {
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.vendor-card:hover {
+  transform: translateY(-10px);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1) 0%, rgba(17, 17, 17, 0.9) 100%);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: var(--gold-glow);
+}
+
+.vendor-icon {
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.vendor-card:hover .vendor-icon {
+  color: var(--primary-gold);
+  transform: scale(1.2);
+}
+
+.vendor-name {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
