@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/image.png';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,39 +23,40 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: '/' },
+    { name: 'Services', href: '/services/wedding-planning' },
+    { name: 'Portfolio', href: '/portfolio' },
+    { name: 'About', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+    { name: 'Contact', href: '/contact' },
   ];
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <a href="#home"><img src={logo} alt="SAMARVA Logo" /></a>
+          <Link to="/"><img src={logo} alt="SAMARVA Logo" /></Link>
         </div>
         
         <ul className={`navbar-menu ${mobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <li key={link.name} className="navbar-item">
-              <a 
-                href={link.href} 
+              <Link 
+                to={link.href} 
                 className="navbar-link"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           ))}
           <li className="navbar-item mobile-cta">
-            <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Book Consultation</button>
+            <button className="btn-primary" onClick={() => { navigate('/contact'); setMobileMenuOpen(false); }}>Book Consultation</button>
           </li>
         </ul>
         
         <div className="navbar-cta">
-          <button className="btn-primary" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>Book Consultation</button>
+          <button className="btn-primary" onClick={() => navigate('/contact')}>Book Consultation</button>
         </div>
 
         <button 
