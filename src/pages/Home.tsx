@@ -18,7 +18,7 @@ export default function Home() {
     "description": "Premium Event Management Company offering Wedding Planning, Corporate Events, and Decoration Services in Andhra Pradesh.",
     "areaServed": ["Vijayawada", "Guntur", "Amaravati", "Bhimavaram", "Rajahmundry", "Visakhapatnam", "Andhra Pradesh", "Telangana"],
     "telephone": "+91-8309653769",
-    "url": "https://samarvaevents.com"
+    "url": "https://samarva.vercel.app"
   });
 
   return (
@@ -26,7 +26,7 @@ export default function Home() {
       <SEO 
         title="Event Management Company & Wedding Planner | Samarva Events"
         description="Samarva Events is a premium Event Management Company & Wedding Planner serving Vijayawada, Guntur, and across Andhra Pradesh. Best Event Organizers."
-        canonical="https://samarvaevents.com/"
+        canonical="https://samarva.vercel.app/"
         schema={schema}
       />
       <HeroSection />

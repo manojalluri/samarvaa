@@ -11,7 +11,7 @@ interface SEOProps {
 
 export default function SEO({ title, description, canonical, schema, url, image }: SEOProps) {
   // Replace with the actual production domain
-  const siteUrl = 'https://samarvaevents.com'; 
+  const siteUrl = 'https://samarva.vercel.app'; 
   const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
   // Use a default OpenGraph image if none provided
   const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/src/assets/image.png`; 
